@@ -6,7 +6,7 @@
 /*   By: wkullana <wkullana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 23:58:38 by wkullana          #+#    #+#             */
-/*   Updated: 2024/08/28 23:58:41 by wkullana         ###   ########.fr       */
+/*   Updated: 2024/08/29 00:57:32 by wkullana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
-// Part 1 - Libc functions
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
@@ -47,7 +46,6 @@ int		ft_atoi(const char *str);
 void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *src);
 
-// Part 2 - Additional functions
 char	*ft_substr(const char *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
@@ -60,7 +58,6 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 
-// Bonus part
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
@@ -71,28 +68,22 @@ void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
-// Additional functions not in the checker
-int		ft_isblank(int c);
-int		ft_iscntrl(int c);
-int		ft_isgraph(int c);
 int		ft_islower(int c);
-int		ft_ispunct(int c);
-int		ft_isspace(int c);
 int		ft_isupper(int c);
-int		ft_isxdigit(int c);
-int		ft_str_isalnum(const char *str);
-int		ft_str_isalpha(const char *str);
-int		ft_str_isdigit(const char *str);
-int		ft_str_islower(const char *str);
-int		ft_str_isupper(const char *str);
-int		ft_str_isxdigit(const char *str);
-char	*ft_str_tolower(char *str);
-char	*ft_str_toupper(char *str);
-size_t	ft_strnlen(const char *str, size_t n);
-char	*ft_strcat(char *dst, const char *src);
-char	*ft_strncat(char *dst, const char *src, size_t n);
-char	*ft_strcpy(char *dst, const char *src);
-char	*ft_strncpy(char *dst, const char *src, size_t n);
-int		ft_strcmp(const char *str1, const char *str2);
+// int		ft_isxdigit(int c);
+// int		ft_str_isalnum(const char *str);
+// int		ft_str_isalpha(const char *str);
+// int		ft_str_isdigit(const char *str);
+// int		ft_str_islower(const char *str);
+// int		ft_str_isupper(const char *str);
+// int		ft_str_isxdigit(const char *str);
+// char	*ft_str_tolower(char *str);
+// char	*ft_str_toupper(char *str);
+// size_t	ft_strnlen(const char *str, size_t n);
+// char	*ft_strcat(char *dst, const char *src);
+// char	*ft_strncat(char *dst, const char *src, size_t n);
+// char	*ft_strcpy(char *dst, const char *src);
+// char	*ft_strncpy(char *dst, const char *src, size_t n);
+// int		ft_strcmp(const char *str1, const char *str2);
 
 #endif
