@@ -6,7 +6,7 @@
 /*   By: wkullana <wkullana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 23:58:38 by wkullana          #+#    #+#             */
-/*   Updated: 2024/08/29 01:00:53 by wkullana         ###   ########.fr       */
+/*   Updated: 2024/09/01 13:15:08 by wkullana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,23 +67,5 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-
-int		ft_islower(int c);
-int		ft_isupper(int c);
-// int		ft_isxdigit(int c);
-// int		ft_str_isalnum(const char *str);
-// int		ft_str_isalpha(const char *str);
-// int		ft_str_isdigit(const char *str);
-// int		ft_str_islower(const char *str);
-// int		ft_str_isupper(const char *str);
-// int		ft_str_isxdigit(const char *str);
-// char	*ft_str_tolower(char *str);
-// char	*ft_str_toupper(char *str);
-// size_t	ft_strnlen(const char *str, size_t n);
-// char	*ft_strcat(char *dst, const char *src);
-// char	*ft_strncat(char *dst, const char *src, size_t n);
-// char	*ft_strcpy(char *dst, const char *src);
-// char	*ft_strncpy(char *dst, const char *src, size_t n);
-// int		ft_strcmp(const char *str1, const char *str2);
 
 #endif

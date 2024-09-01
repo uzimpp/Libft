@@ -6,7 +6,7 @@
 /*   By: wkullana <wkullana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/24 13:29:10 by wkullana          #+#    #+#             */
-/*   Updated: 2024/08/28 23:44:31 by wkullana         ###   ########.fr       */
+/*   Updated: 2024/09/01 12:22:28 by wkullana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 int	ft_isalpha(int c)
 {
-	if (ft_islower(c) || ft_isupper(c))
+	if (65 <= c && c <= 90)
+		return (1);
+	if (97 <= c && c <= 122)
 		return (1);
 	return (0);
 }

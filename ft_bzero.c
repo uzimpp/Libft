@@ -6,7 +6,7 @@
 /*   By: wkullana <wkullana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 15:47:56 by wkullana          #+#    #+#             */
-/*   Updated: 2024/08/29 00:35:58 by wkullana         ###   ########.fr       */
+/*   Updated: 2024/09/01 13:05:08 by wkullana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,5 @@ void	ft_bzero(void *s, size_t n)
 
 	ptr = (char *) s;
 	while (n-- > 0)
-	{
 		*(ptr++) = 0;
-	}
 }
