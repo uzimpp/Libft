@@ -23,7 +23,7 @@ OBJS 			= $(SRCS:.c=.o)
 
 B_OBJS 			= $(B_SRCS:.c=.o)
 
-CC				= gcc
+CC				= cc
 FLAGS			= -Wall -Werror -Wextra
 
 AR				= ar -rsc
@@ -48,9 +48,5 @@ fclean:			clean
 				$(RM) $(NAME)
 
 re:				fclean all
-
-so:
-				$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
-				gcc -nostartfiles -shared -o libft.so $(OBJS) $(B_OBJS)
 
 .PHONY:			all clean fclean re bonus
