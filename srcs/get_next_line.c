@@ -6,17 +6,17 @@
 /*   By: wkullana <wkullana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 16:40:29 by wkullana          #+#    #+#             */
-/*   Updated: 2024/11/05 13:16:23 by wkullana         ###   ########.fr       */
+/*   Updated: 2024/11/05 14:08:32 by wkullana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/get_next_line.h"
 
-void	clean_lst(t_list **lst)
+void	clean_lst(t_gnllist **lst)
 {
-	t_list	*last;
-	char	*line;
-	int		i;
+	t_gnllist	*last;
+	char		*line;
+	int			i;
 
 	if (!lst || !*lst)
 		return ;
@@ -34,14 +34,14 @@ void	clean_lst(t_list **lst)
 		return ;
 	}
 	ft_free_lst(*lst);
-	*lst = malloc(sizeof(t_list));
+	*lst = malloc(sizeof(t_gnllist));
 	if (!*lst)
 		return ((void)free(line));
 	(*lst)->content = line;
 	(*lst)->next = NULL;
 }
 
-void	extract_line(t_list *lst, char **line)
+void	extract_line(t_gnllist *lst, char **line)
 {
 	int	i;
 	int	j;
@@ -69,12 +69,12 @@ void	extract_line(t_list *lst, char **line)
 	(*line)[j] = '\0';
 }
 
-int	append(t_list **lst, char *buff, t_list **current, int n)
+int	append(t_gnllist **lst, char *buff, t_gnllist **current, int n)
 {
-	int		i;
-	t_list	*node;
+	int			i;
+	t_gnllist	*node;
 
-	node = malloc(sizeof(t_list));
+	node = malloc(sizeof(t_gnllist));
 	if (!node)
 		return (0);
 	node->content = malloc(sizeof(char) * (n + 1));
@@ -96,11 +96,11 @@ int	append(t_list **lst, char *buff, t_list **current, int n)
 	return (1);
 }
 
-int	readlst(int fd, t_list **lst)
+int	readlst(int fd, t_gnllist **lst)
 {
-	char	*buff;
-	int		n;
-	t_list	*current;
+	char		*buff;
+	int			n;
+	t_gnllist	*current;
 
 	n = 1;
 	current = *lst;
@@ -127,8 +127,8 @@ int	readlst(int fd, t_list **lst)
 
 char	*get_next_line(int fd)
 {
-	static t_list	*lst[MAX_FD];
-	char			*line;
+	static t_gnllist	*lst[MAX_FD];
+	char				*line;
 
 	if (fd < 0 || MAX_FD <= fd || BUFFER_SIZE <= 0)
 		return (NULL);

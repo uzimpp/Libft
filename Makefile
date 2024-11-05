@@ -1,8 +1,9 @@
 NAME			= libft.a
 
 
-SRCS_DIR		= ./srcs/
-HEAD_DIR		= ./includes/
+SRCS_DIR		= srcs
+HEAD_DIR		= includes
+OBJS_DIR		= objs
 
 SRC 			= ft_isalpha.c ft_isdigit.c ft_isalnum.c \
 				ft_isascii.c ft_isprint.c ft_strlen.c \
@@ -29,8 +30,8 @@ SRC 			= ft_isalpha.c ft_isdigit.c ft_isalnum.c \
 				get_next_line_utils.c
 
 
-SRCS			= $(addprefix $(SRCS_DIR), $(SRC))
-OBJS			= $(SRCS:.c=.o)
+SRCS			= $(addprefix $(SRCS_DIR)/, $(SRC))
+OBJS			= $(SRCS:$(SRCS_DIR)/%.c=$(OBJS_DIR)/%.o)
 
 
 CC				= cc
@@ -45,11 +46,15 @@ all:		$(NAME)
 $(NAME):	$(OBJS)
 			$(AR) $(NAME) $(OBJS)
 
+$(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c $(HEAD_DIR)/libft.h
+	@mkdir -p $(@D)
+	$(CC) $(FLAGS) -I ./$(HEAD_DIR)/ -c $< -o $@
+
 .c.o:
-			$(CC) $(FLAGS) -c -I $(HEAD_DIR) $< -o $(<:.c=.o)
+			$(CC) $(FLAGS) -c -I ./$(HEAD_DIR)/ $< -o $(<:.c=.o)
 
 clean:
-			$(RM) $(OBJS)
+			$(RM) -r $(OBJS_DIR)
 
 fclean:		clean
 			$(RM) $(NAME)

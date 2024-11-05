@@ -6,13 +6,15 @@
 /*   By: wkullana <wkullana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 23:58:38 by wkullana          #+#    #+#             */
-/*   Updated: 2024/09/01 13:15:08 by wkullana         ###   ########.fr       */
+/*   Updated: 2024/11/05 14:01:05 by wkullana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include "get_next_line.h"
+# include "ft_printf.h"
 # include <stdlib.h>
 # include <unistd.h>
 
